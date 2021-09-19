@@ -157,7 +157,7 @@ function shareCanvas(fileName) {
                 .then(() => console.log('Share was successful.'))
                 .catch((error) => alert('Sharing failed', error));
         } else {
-            console.log(`Your system doesn't support sharing files.`);
+            alert(`Your device doesn't support sharing files.`);
         }
     }, 'image/png');
 }
