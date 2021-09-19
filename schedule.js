@@ -41,6 +41,7 @@ const Colors = [
     '#caede6',
     '#e5e1f7',
     '#fcf2e6',
+    '#e3e3e3',
 ];
 
 const Schedule = [
