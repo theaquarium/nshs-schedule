@@ -163,5 +163,11 @@ function shareCanvas(fileName) {
 }
 
 function printBase64(base64) {
-    printJS(base64, 'image');
+    printJS({
+        printable: base64,
+        type: 'image',
+        onError: () => {
+            alert(`Your device doesn't support printing.`);
+        },
+    });
 }
