@@ -36,5 +36,5 @@ document.querySelector('.print-button').addEventListener('click', () => {
     printBase64(canvasToBase64());
 });
 document.querySelector('.share-button').addEventListener('click', () => {
-    shareBase64(canvasToBase64(), 'schedule.png');
+    shareCanvas('schedule.png');
 });

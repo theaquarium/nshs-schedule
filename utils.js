@@ -148,16 +148,18 @@ function saveBase64(base64, fileName) {
     link.click();
 }
 
-function shareBase64(base64, fileName) {
-    const file = new File([base64], fileName, { type: 'image/png' });
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        navigator
-            .share({ files: [file] })
-            .then(() => console.log('Share was successful.'))
-            .catch((error) => console.log('Sharing failed', error));
-    } else {
-        console.log(`Your system doesn't support sharing files.`);
-    }
+function shareCanvas(fileName) {
+    canvas.toBlob((blob) => {
+        const file = new File([blob], fileName, { type: 'image/png' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            navigator
+                .share({ files: [file] })
+                .then(() => console.log('Share was successful.'))
+                .catch((error) => console.log('Sharing failed', error));
+        } else {
+            console.log(`Your system doesn't support sharing files.`);
+        }
+    }, 'image/png');
 }
 
 function printBase64(base64) {
