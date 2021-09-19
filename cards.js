@@ -198,7 +198,7 @@ periodTypes.forEach((periodName) => {
             if (
                 settingsCache[i].room.startsWith('21') ||
                 settingsCache[i].room.startsWith('22') ||
-                settingsCache[i].room.startsWith('24')
+                settingsCache[i].room.startsWith('4')
             ) {
                 settingsCache[i].lunch = 0;
             } else if (
