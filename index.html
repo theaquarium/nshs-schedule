@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NSHS Schedule</title>
+
+        <meta
+            name="description"
+            content="A tool to keep track of the new NSHS schedule and help you manage your Zoom links."
+        />
+
+        <meta content="NSHS Schedule" property="og:title" />
+
+        <meta
+            content="A tool to keep track of the new NSHS schedule and help you manage your Zoom links."
+            property="og:description"
+        />
+
+        <meta content="nshs.site" property="og:site_name" />
+
+        <meta
+            content="favicons/android-chrome-512x512.png?v=Gv6KgplRy5"
+            property="og:image"
+        />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-PZ6NG4L1X7"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-PZ6NG4L1X7');
+        </script>
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="favicons/apple-touch-icon.png?v=Gv6KgplRy5"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicons/favicon-32x32.png?v=Gv6KgplRy5"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicons/favicon-16x16.png?v=Gv6KgplRy5"
+        />
+        <link rel="manifest" href="favicons/site.webmanifest?v=Gv6KgplRy5" />
+        <link
+            rel="mask-icon"
+            href="favicons/safari-pinned-tab.svg?v=Gv6KgplRy5"
+            color="#2a9fd6"
+        />
+        <link rel="shortcut icon" href="favicons/favicon.ico?v=Gv6KgplRy5" />
+        <meta name="msapplication-TileColor" content="#2a9fd6" />
+        <meta
+            name="msapplication-config"
+            content="favicons/browserconfig.xml?v=Gv6KgplRy5"
+        />
+        <meta name="theme-color" content="#2a9fd6" />
+
+        <link rel="stylesheet" href="index.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+            rel="stylesheet"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <section class="hero is-link is-bold block">
+            <div class="hero-body">
+                <div class="container">
+                    <p class="title">NSHS Schedule</p>
+                    <p class="subtitle">
+                        2021-2022 School Year Schedule Generator Tool
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="columns main">
+            <div class="column">
+                <div class="content">
+                    <h3>Hi!</h3>
+                    <p>
+                        This is a little tool to make a pretty looking version
+                        of your schedule that you can save on your phone or
+                        print or whatever you want!
+                    </p>
+                    <p>
+                        Click on each of the cards to put in your classes and
+                        your schedule will show up on the right (or at the
+                        bottom if you're using a phone). That's it! Let me know
+                        if you have any questions!
+                    </p>
+                    <p>Have a great day!<br /><em> - Leah</em></p>
+                </div>
+                <div class="divider"></div>
+                <div class="block">
+                    <div class="field">
+                        <label class="label">Schedule Title</label>
+                        <div class="control">
+                            <input
+                                class="input schedule-title"
+                                type="text"
+                                placeholder="NSHS Schedule"
+                                value=""
+                            />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" class="use24h" />
+                            Use 24 hour time
+                        </label>
+                    </div>
+
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" class="north" />
+                            I go to North (Show me Tiger blocks instead)
+                        </label>
+                    </div>
+
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" class="useColors" />
+                            No colored class backgrounds (White schedule)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="class-cards">
+                    <div class="card block dummy class-card is-closed">
+                        <header class="card-header">
+                            <p class="card-header-title">Dummy</p>
+                            <button
+                                class="card-header-icon"
+                                aria-label="more options"
+                            >
+                                <span class="open-icon icon">
+                                    <ion-icon name="caret-down"></ion-icon>
+                                </span>
+                                <span class="closed-icon icon">
+                                    <ion-icon name="caret-back"></ion-icon>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card-content">
+                            <label class="checkbox">
+                                <input
+                                    type="checkbox"
+                                    class="differentBlocks"
+                                    checked
+                                />
+                                All three of my blocks are the same
+                            </label>
+                            <div class="divider"></div>
+                            <div class="tabs is-boxed block-tabs">
+                                <ul>
+                                    <li class="block-tab-1 is-active">
+                                        <a>Dummy1</a>
+                                    </li>
+                                    <li class="block-tab-2"><a>Dummy2</a></li>
+                                    <li class="block-tab-3"><a>Dummy3</a></li>
+                                </ul>
+                            </div>
+                            <div class="block-page">
+                                <label class="checkbox block">
+                                    <input type="checkbox" class="hasClass" />
+                                    I have class this block
+                                </label>
+                                <div class="class-info-fields">
+                                    <div class="field">
+                                        <label class="label">Class Name</label>
+                                        <div class="control">
+                                            <input
+                                                class="input class"
+                                                type="text"
+                                                placeholder="e.g. Chemistry, English"
+                                                value=""
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Room Number</label>
+                                        <div class="control">
+                                            <input
+                                                class="input room"
+                                                type="text"
+                                                placeholder="e.g. 1204"
+                                                value=""
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Teacher</label>
+                                        <div class="control">
+                                            <input
+                                                class="input teacher"
+                                                type="text"
+                                                placeholder="e.g. Mr. McFakehead"
+                                                value=""
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Lunch</label>
+                                        <div class="select">
+                                            <select class="lunch">
+                                                <option value="-1">None</option>
+                                                <option value="3">
+                                                    All Lunches
+                                                </option>
+                                                <option value="0">1st</option>
+                                                <option value="1">2nd</option>
+                                                <option value="2">3rd</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Block Color</label>
+                                    <div class="select">
+                                        <select class="color">
+                                            <option value="0">White</option>
+                                            <option value="1">Red</option>
+                                            <option value="2">Orange</option>
+                                            <option value="3">Yellow</option>
+                                            <option value="4">Green</option>
+                                            <option value="5">Blue</option>
+                                            <option value="6">Indigo</option>
+                                            <option value="7">Purple</option>
+                                            <option value="8">Pink</option>
+                                            <option value="9">Green 2</option>
+                                            <option value="10">Orange 2</option>
+                                            <option value="11">
+                                                Yellow-Green
+                                            </option>
+                                            <option value="12">Rose</option>
+                                            <option value="13">Teal</option>
+                                            <option value="14">Indigo</option>
+                                            <option value="15">Cream</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card block Advisory class-card is-closed">
+                        <header class="card-header">
+                            <p class="card-header-title">Advisory</p>
+                            <button
+                                class="card-header-icon"
+                                aria-label="more options"
+                            >
+                                <span class="open-icon icon">
+                                    <ion-icon name="caret-down"></ion-icon>
+                                </span>
+                                <span class="closed-icon icon">
+                                    <ion-icon name="caret-back"></ion-icon>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card-content">
+                            <div class="block-page">
+                                <div class="field">
+                                    <label class="label">Room Number</label>
+                                    <div class="control">
+                                        <input
+                                            class="input room"
+                                            type="text"
+                                            placeholder="e.g. 1204"
+                                            value=""
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Block Color</label>
+                                    <div class="select">
+                                        <select class="color">
+                                            <option value="0">White</option>
+                                            <option value="1">Red</option>
+                                            <option value="2">Orange</option>
+                                            <option value="3">Yellow</option>
+                                            <option value="4">Green</option>
+                                            <option value="5">Blue</option>
+                                            <option value="6">Indigo</option>
+                                            <option value="7">Purple</option>
+                                            <option value="8">Pink</option>
+                                            <option value="9">Green 2</option>
+                                            <option value="10">Orange 2</option>
+                                            <option value="11">
+                                                Yellow-Green
+                                            </option>
+                                            <option value="12">Rose</option>
+                                            <option value="13">Teal</option>
+                                            <option value="14">Indigo</option>
+                                            <option value="15">Cream</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card block WIN class-card is-closed">
+                        <header class="card-header">
+                            <p class="card-header-title">WIN</p>
+                            <button
+                                class="card-header-icon"
+                                aria-label="more options"
+                            >
+                                <span class="open-icon icon">
+                                    <ion-icon name="caret-down"></ion-icon>
+                                </span>
+                                <span class="closed-icon icon">
+                                    <ion-icon name="caret-back"></ion-icon>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card-content">
+                            <div class="block-page">
+                                <div class="field">
+                                    <label class="label">Block Color</label>
+                                    <div class="select">
+                                        <select class="color">
+                                            <option value="0">White</option>
+                                            <option value="1">Red</option>
+                                            <option value="2">Orange</option>
+                                            <option value="3">Yellow</option>
+                                            <option value="4">Green</option>
+                                            <option value="5">Blue</option>
+                                            <option value="6">Indigo</option>
+                                            <option value="7">Purple</option>
+                                            <option value="8">Pink</option>
+                                            <option value="9">Green 2</option>
+                                            <option value="10">Orange 2</option>
+                                            <option value="11">
+                                                Yellow-Green
+                                            </option>
+                                            <option value="12">Rose</option>
+                                            <option value="13">Teal</option>
+                                            <option value="14">Indigo</option>
+                                            <option value="15">Cream</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card block Lion class-card is-closed">
+                        <header class="card-header">
+                            <p class="card-header-title">Lion</p>
+                            <button
+                                class="card-header-icon"
+                                aria-label="more options"
+                            >
+                                <span class="open-icon icon">
+                                    <ion-icon name="caret-down"></ion-icon>
+                                </span>
+                                <span class="closed-icon icon">
+                                    <ion-icon name="caret-back"></ion-icon>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card-content">
+                            <div class="block-page">
+                                <div class="field">
+                                    <label class="label">Block Color</label>
+                                    <div class="select">
+                                        <select class="color">
+                                            <option value="0">White</option>
+                                            <option value="1">Red</option>
+                                            <option value="2">Orange</option>
+                                            <option value="3">Yellow</option>
+                                            <option value="4">Green</option>
+                                            <option value="5">Blue</option>
+                                            <option value="6">Indigo</option>
+                                            <option value="7">Purple</option>
+                                            <option value="8">Pink</option>
+                                            <option value="9">Green 2</option>
+                                            <option value="10">Orange 2</option>
+                                            <option value="11">
+                                                Yellow-Green
+                                            </option>
+                                            <option value="12">Rose</option>
+                                            <option value="13">Teal</option>
+                                            <option value="14">Indigo</option>
+                                            <option value="15">Cream</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="canvas-column content">
+                    <div class="level" style="margin-bottom: 0">
+                        <div class="level-left">
+                            <h1>Your Schedule</h1>
+                        </div>
+                        <div class="level-right">
+                            <div class="field has-addons">
+                                <p class="control">
+                                    <button
+                                        class="
+                                            button
+                                            is-small is-outlined is-link
+                                            save-button
+                                        "
+                                    >
+                                        <span class="icon">
+                                            <ion-icon name="save"></ion-icon>
+                                        </span>
+                                        <span>Save</span>
+                                    </button>
+                                </p>
+                                <p class="control">
+                                    <button
+                                        class="
+                                            button
+                                            is-small is-outlined is-link
+                                            print-button
+                                        "
+                                    >
+                                        <span class="icon">
+                                            <ion-icon name="print"></ion-icon>
+                                        </span>
+                                        <span>Print</span>
+                                    </button>
+                                </p>
+                                <p class="control">
+                                    <button
+                                        class="
+                                            button
+                                            is-small is-outlined is-link
+                                            share-button
+                                        "
+                                    >
+                                        <span class="icon">
+                                            <ion-icon
+                                                name="share-social"
+                                            ></ion-icon>
+                                        </span>
+                                        <span>Share</span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <canvas id="canvas" width="2550" height="3300" />
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container content has-text-centered">
+                <p>
+                    Made with <ion-icon name="heart"></ion-icon> by
+                    <a href="https://leah.vashevko.com">Leah Vashevko</a>.
+                </p>
+                <p>
+                    <a href="https://remote.nshs.site"
+                        >See last year's nshs.site</a
+                    >.
+                </p>
+                <p>
+                    This website is not affiliated with, endorsed by, or in any
+                    way officially connected with Newton South High School or
+                    the Newton Public Schools.
+                </p>
+                <p>
+                    Having issues? Found a bug? Need support? Send me an email
+                    at <a href="mail:leah@vashevko">leah@vashevko.com</a> or
+                    <a href="https://discord.gg/KXxZt2BPUF"
+                        >join the Discord server</a
+                    >.
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+        <script src="settings.js"></script>
+        <script src="utils.js"></script>
+        <script src="schedule.js"></script>
+        <script src="draw.js"></script>
+        <script src="cards.js"></script>
+        <script src="other.js"></script>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
