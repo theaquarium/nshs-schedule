@@ -442,7 +442,7 @@ function drawRaw() {
     ctx.textAlign = 'left';
     ctx.font = 'bold 45px Helvetica';
 
-    const footnoteOffsetY = 35;
+    const footnoteOffsetY = 30;
     const footnoteOffsetX = 67;
 
     ctx.fillText(
