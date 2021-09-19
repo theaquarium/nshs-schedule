@@ -1,5 +1,11 @@
 const canvas = document.getElementById('canvas');
+const canvasClone = document.getElementById('canvas-clone');
 const ctx = canvas.getContext('2d');
+
+function copyCanvas() {
+    const base64 = canvasToBase64();
+    canvasClone.src = base64;
+}
 
 function drawRaw() {
     ctx.lineWidth = 10;
@@ -464,6 +470,8 @@ function drawRaw() {
         edgeBorder + columnWidth * 1 + footnoteOffsetX,
         canvasHeight - 170 + footnoteOffsetY,
     );
+
+    copyCanvas();
 }
 
 // Initial draw! + debounce

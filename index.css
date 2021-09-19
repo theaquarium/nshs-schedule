@@ -16,6 +16,10 @@ footer.footer {
 }
 
 #canvas {
+    display: none;
+}
+
+#canvas-clone {
     width: 100%;
     border: 3px dashed #888;
 }
