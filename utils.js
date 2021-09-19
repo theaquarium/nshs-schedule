@@ -32,6 +32,7 @@ function convertTime(timeString, use24h) {
 
         if (!Number.isNaN(parsedHour)) {
             parsedHour %= 12;
+            if (parsedHour === 0) parsedHour = 12;
             return `${parsedHour}:${minute}`;
         }
         return '00:00';

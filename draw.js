@@ -411,7 +411,7 @@ function drawRaw() {
 
                         ctx.fillText(
                             `${convertTime(
-                                block.startTime,
+                                lunch.startTime,
                                 UserSettings.use24h,
                             )}-`,
                             edgeBorder +
@@ -422,7 +422,7 @@ function drawRaw() {
                         );
                         ctx.fillText(
                             `${convertTime(
-                                block.endTime,
+                                lunch.endTime,
                                 UserSettings.use24h,
                             )}`,
                             edgeBorder +
