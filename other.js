@@ -6,6 +6,7 @@ document.querySelector('.use24h').checked = UserSettings.use24h;
 document.querySelector('.north').checked = UserSettings.north;
 lionTigerBlockTitle.innerHTML = UserSettings.north ? 'Tiger' : 'Lion';
 document.querySelector('.useColors').checked = !UserSettings.useColors;
+document.querySelector('.affirmation').value = UserSettings.affirmation;
 
 document.querySelector('.schedule-title').addEventListener('input', () => {
     UserSettings.title = document.querySelector('.schedule-title').value;
@@ -28,6 +29,11 @@ document.querySelector('.useColors').addEventListener('change', () => {
     draw();
 });
 
+document.querySelector('.affirmation').addEventListener('input', () => {
+    UserSettings.affirmation = document.querySelector('.affirmation').value;
+    draw();
+});
+
 // Buttons
 document.querySelector('.save-button').addEventListener('click', () => {
     saveBase64(canvasToBase64(), 'schedule.png');
@@ -37,4 +43,41 @@ document.querySelector('.print-button').addEventListener('click', () => {
 });
 document.querySelector('.share-button').addEventListener('click', () => {
     shareCanvas('schedule.png');
+});
+
+const affirmations = [
+    "You're doing an amazing job, have a great day!",
+    "You're doing great today!",
+    "You've got this!",
+    'Have a great day!',
+    "You're going to do great today!",
+    'This is your moment!',
+    'The sky is the limit!',
+    'You are unique and wonderful.',
+    'Make today your day!',
+    'Be yourself!',
+    'You are valid.',
+    'Every day is an opportunity!',
+    'You are amazing!',
+    'Follow your feelings.',
+    'Love yourself.',
+    'Make today go how you want it.',
+    'Have an amazing day!',
+    'You are awesome!',
+    'You are unstoppable!',
+    'Today is your day!',
+    "You're wonderful!",
+    "Show everyone what you're made of!",
+    'You are loved.',
+    'Take care of yourself.',
+    'Take care of yourself today.',
+    'You deserve the best.',
+    'You deserve the best.',
+];
+
+document.querySelector('.new-affirmation').addEventListener('click', () => {
+    UserSettings.affirmation =
+        affirmations[Math.floor(Math.random() * affirmations.length)];
+    document.querySelector('.affirmation').value = UserSettings.affirmation;
+    draw();
 });

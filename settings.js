@@ -3,6 +3,7 @@ const UserSettings = {
     use24h: false,
     useColors: true,
     north: false,
+    affirmation: "You're doing an amazing job, have a great day!",
 };
 
 const BlockSettings = {

@@ -54,7 +54,7 @@ function drawRaw() {
     ctx.font = 'bold 40px Helvetica';
 
     ctx.fillText(
-        "You're doing an amazing job, have a great day!",
+        UserSettings.affirmation,
         canvasWidth / 2,
         edgeBorder + titleHeight / 2 + 42,
     );
