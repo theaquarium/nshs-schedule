@@ -196,21 +196,23 @@ periodTypes.forEach((periodName) => {
             settingsCache[i].room = blockPages[i].querySelector('.room').value;
 
             if (
-                settingsCache[i].room.startsWith('21') ||
-                settingsCache[i].room.startsWith('22') ||
+                settingsCache[i].room.startsWith('23') ||
+                settingsCache[i].room.startsWith('9') ||
                 settingsCache[i].room.startsWith('4')
             ) {
                 settingsCache[i].lunch = 0;
             } else if (
-                settingsCache[i].room.startsWith('1') ||
+                settingsCache[i].room.startsWith('12') ||
+                settingsCache[i].room.startsWith('13') ||
+                settingsCache[i].room.startsWith('21') ||
                 settingsCache[i].room.startsWith('6')
             ) {
                 settingsCache[i].lunch = 1;
             } else if (
-                settingsCache[i].room.startsWith('23') ||
+                settingsCache[i].room.startsWith('11') ||
+                settingsCache[i].room.startsWith('22') ||
                 settingsCache[i].room.startsWith('3') ||
-                settingsCache[i].room.startsWith('5') ||
-                settingsCache[i].room.startsWith('9')
+                settingsCache[i].room.startsWith('5')
             ) {
                 settingsCache[i].lunch = 2;
             }
