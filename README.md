@@ -1,4 +1,4 @@
-# NSHS Schedule 2021-2022
+# NSHS/NNHS Schedule Maker
 
 This is a little tool to make a pretty looking version of your schedule that you can save on your phone or print or whatever you want!
 
