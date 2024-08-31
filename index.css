@@ -2,9 +2,21 @@ html,
 body {
     width: 100%;
     margin: 0;
-    font-family: 'Inter', sans-serif;
     background: #faf7f7;
     position: relative;
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+#self-promo {
+    color: inherit;
+    border-bottom: 1px dotted #40465477;
+}
+
+#self-promo:hover {
+    border-bottom-style: solid;
 }
 
 footer.footer {
@@ -22,6 +34,7 @@ footer.footer {
 #canvas-clone {
     width: 100%;
     border: 3px dashed #888;
+    object-fit: contain;
 }
 
 @media screen and (min-width: 769px), print {
@@ -45,6 +58,10 @@ footer.footer {
 
 .class-card.is-closed > .card-content {
     display: none;
+}
+
+.class-card.is-closed > .card-header {
+    box-shadow: none;
 }
 
 .class-card.is-closed .closed-icon {

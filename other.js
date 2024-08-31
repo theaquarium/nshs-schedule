@@ -20,6 +20,8 @@ document.querySelector('.use24h').addEventListener('change', () => {
 
 document.querySelector('.north').addEventListener('change', () => {
     UserSettings.north = document.querySelector('.north').checked;
+    UserSettings.title = UserSettings.north ? 'NNHS Schedule' : 'NSHS Schedule';
+    document.querySelector('.schedule-title').value = UserSettings.title;
     lionTigerBlockTitle.innerHTML = UserSettings.north ? 'Tiger' : 'Lion';
     draw();
 });
@@ -46,7 +48,7 @@ document.querySelector('.share-button').addEventListener('click', () => {
 });
 
 const affirmations = [
-    "You're doing an amazing job, have a great day!",
+    "You're doing amazing, have a great day!",
     "You're doing great today!",
     "You've got this!",
     'Have a great day!',

@@ -22,6 +22,10 @@ periodTypes.forEach((periodName) => {
     cardsContainer.insertBefore(card, document.querySelector('.Advisory'));
     card.classList.remove('dummy');
 
+    if (!['C', 'D', 'F', 'G'].includes(periodName)) {
+        card.querySelector('.lunchfield').remove();
+    }
+
     let blockPages = [];
     const blockTabs = [
         card.querySelector('.block-tab-1'),
@@ -31,7 +35,7 @@ periodTypes.forEach((periodName) => {
     let settingsCache = [
         {
             hasClass: true,
-            lunch: -1,
+            lunch: 3,
             class: '',
             teacher: '',
             room: '',
@@ -39,7 +43,7 @@ periodTypes.forEach((periodName) => {
         },
         {
             hasClass: true,
-            lunch: -1,
+            lunch: 3,
             class: '',
             teacher: '',
             room: '',
@@ -47,7 +51,7 @@ periodTypes.forEach((periodName) => {
         },
         {
             hasClass: true,
-            lunch: -1,
+            lunch: 3,
             class: '',
             teacher: '',
             room: '',
@@ -129,8 +133,10 @@ periodTypes.forEach((periodName) => {
             blockPages[i].querySelector('.teacher').value =
                 settingsCache[i].teacher;
 
-            blockPages[i].querySelector('.lunch').value =
-                settingsCache[i].lunch;
+            const lunchInput = blockPages[i].querySelector('.lunch');
+            if (lunchInput) {
+                lunchInput.value = settingsCache[i].lunch;
+            }
 
             blockPages[i].querySelector('.color').value =
                 settingsCache[i].color;
@@ -163,7 +169,7 @@ periodTypes.forEach((periodName) => {
                 if (settingsCache[i].hasClass) {
                     settingsCache[i] = {
                         hasClass: true,
-                        lunch: -1,
+                        lunch: 3,
                         class: '',
                         teacher: '',
                         room: '',
@@ -195,28 +201,6 @@ periodTypes.forEach((periodName) => {
             if (writebackListenerLock) return;
             settingsCache[i].room = blockPages[i].querySelector('.room').value;
 
-            if (
-                settingsCache[i].room.startsWith('23') ||
-                settingsCache[i].room.startsWith('9') ||
-                settingsCache[i].room.startsWith('4')
-            ) {
-                settingsCache[i].lunch = 0;
-            } else if (
-                settingsCache[i].room.startsWith('12') ||
-                settingsCache[i].room.startsWith('13') ||
-                settingsCache[i].room.startsWith('21') ||
-                settingsCache[i].room.startsWith('6')
-            ) {
-                settingsCache[i].lunch = 1;
-            } else if (
-                settingsCache[i].room.startsWith('11') ||
-                settingsCache[i].room.startsWith('22') ||
-                settingsCache[i].room.startsWith('3') ||
-                settingsCache[i].room.startsWith('5')
-            ) {
-                settingsCache[i].lunch = 2;
-            }
-
             write();
         });
 
@@ -229,13 +213,16 @@ periodTypes.forEach((periodName) => {
                 write();
             });
 
-        blockPages[i].querySelector('.lunch').addEventListener('input', () => {
-            if (writebackListenerLock) return;
-            settingsCache[i].lunch = parseInt(
-                blockPages[i].querySelector('.lunch').value,
-            );
-            write();
-        });
+        const lunchInput = blockPages[i].querySelector('.lunch');
+        if (lunchInput) {
+            lunchInput.addEventListener('input', () => {
+                if (writebackListenerLock) return;
+                settingsCache[i].lunch = parseInt(
+                    blockPages[i].querySelector('.lunch').value,
+                );
+                write();
+            });
+        }
 
         blockPages[i].querySelector('.color').addEventListener('input', () => {
             if (writebackListenerLock) return;

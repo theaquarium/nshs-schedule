@@ -8,8 +8,6 @@ function copyCanvas() {
 }
 
 function drawRaw() {
-    ctx.lineWidth = 10;
-
     const ppi = 300;
 
     const edgeBorder = (1 / 3) * ppi;
@@ -18,6 +16,9 @@ function drawRaw() {
     const titleHeight = (1 / 2) * ppi;
     const weekdayHeight = (1 / 3) * ppi;
     const lunchBlocksWidth = (1 / 2) * ppi;
+
+    canvas.height = canvasHeight;
+    canvas.width = canvasWidth;
 
     function minuteToHeight(minute) {
         const startMin = 9 * 60;
@@ -29,6 +30,8 @@ function drawRaw() {
         const dayRatio = minuteDiff / (endMin - startMin);
         return startPixel + dayRatio * (endPixel - startPixel);
     }
+
+    ctx.lineWidth = 10;
 
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
@@ -182,7 +185,7 @@ function drawRaw() {
                         UserSettings.use24h,
                     )}-${convertTime(block.endTime, UserSettings.use24h)}`,
                     edgeBorder + columnWidth * dayNum + 20,
-                    startPixel + 20 + 5 + 57,
+                    startPixel + 20 + 5 + 55,
                 );
 
                 // Room Number
@@ -357,8 +360,8 @@ function drawRaw() {
                         );
 
                         if (
-                            lunchNum === thisBlockSettings.lunch ||
-                            thisBlockSettings.lunch === 3
+                            lunchNum !== thisBlockSettings.lunch &&
+                            thisBlockSettings.lunch !== 3
                         ) {
                             // ctx.fillStyle = '#ffffff';
                             // ctx.fillRect(
@@ -370,7 +373,7 @@ function drawRaw() {
                             //     lunchEndPixel - lunchStartPixel,
                             // );
 
-                            ctx.strokeStyle = '#00000066';
+                            ctx.strokeStyle = '#00000055';
                             drawDiagRect(
                                 ctx,
                                 edgeBorder +
@@ -379,7 +382,7 @@ function drawRaw() {
                                 lunchStartPixel,
                                 lunchBlocksWidth,
                                 lunchEndPixel - lunchStartPixel,
-                                80,
+                                60,
                             );
                             ctx.strokeStyle = '#000000';
                         }
@@ -442,7 +445,7 @@ function drawRaw() {
     ctx.textAlign = 'left';
     ctx.font = 'bold 45px Helvetica';
 
-    const footnoteOffsetY = 30;
+    const footnoteOffsetY = 22;
     const footnoteOffsetX = 67;
 
     ctx.fillText(

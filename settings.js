@@ -3,7 +3,7 @@ const UserSettings = {
     use24h: false,
     useColors: true,
     north: false,
-    affirmation: "You're doing an amazing job, have a great day!",
+    affirmation: 'Semester 1',
 };
 
 const BlockSettings = {
@@ -12,7 +12,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     A2: {
@@ -20,7 +20,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     A3: {
@@ -28,7 +28,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     B1: {
@@ -36,7 +36,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     B2: {
@@ -44,7 +44,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     B3: {
@@ -52,7 +52,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     C1: {
@@ -60,7 +60,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     C2: {
@@ -68,7 +68,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     C3: {
@@ -76,7 +76,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     D1: {
@@ -84,7 +84,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     D2: {
@@ -92,7 +92,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     D3: {
@@ -100,7 +100,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     E1: {
@@ -108,7 +108,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     E2: {
@@ -116,7 +116,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     E3: {
@@ -124,7 +124,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     F1: {
@@ -132,7 +132,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     F2: {
@@ -140,7 +140,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     F3: {
@@ -148,7 +148,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     G1: {
@@ -156,7 +156,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     G2: {
@@ -164,7 +164,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     G3: {
@@ -172,7 +172,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     Advisory: {
@@ -180,7 +180,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     Lion: {
@@ -188,7 +188,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
     WIN: {
@@ -196,7 +196,7 @@ const BlockSettings = {
         class: '',
         room: '',
         teacher: '',
-        lunch: -1,
+        lunch: 3,
         color: 0,
     },
 };
