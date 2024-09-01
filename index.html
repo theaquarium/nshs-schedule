@@ -86,11 +86,40 @@
     <body>
         <section class="hero is-link is-bold block">
             <div class="hero-body">
-                <div class="container">
-                    <p class="title">NSHS/NNHS Schedule Maker</p>
-                    <p class="subtitle">
-                        Proudly serving the Newton high schools since 2020!
-                    </p>
+                <div class="level">
+                    <div class="level-left">
+                        <div class="container">
+                            <p class="title">NSHS/NNHS Schedule Maker</p>
+                            <p class="subtitle">
+                                Proudly serving the Newton high schools since
+                                2020!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="level-right">
+                        <div id="clock" class="container has-text-right">
+                            <div id="clock-time" class="is-italic"></div>
+                            <div>
+                                <span
+                                    id="clock-block"
+                                    class="has-text-weight-bold is-size-5"
+                                ></span>
+                                <span id="clock-block-time"></span>
+                            </div>
+                            <div id="clock-block-remaining"></div>
+                            <br />
+                            <div id="clock-lunch">
+                                <div>
+                                    <span
+                                        id="clock-lunch-name"
+                                        class="has-text-weight-bold"
+                                    ></span>
+                                    <span id="clock-lunch-time"></span>
+                                </div>
+                                <div id="clock-lunch-remaining"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -668,12 +697,13 @@
         <script src="lib/print.min.js"></script>
         <script src="lib/coloris.min.js"></script>
 
-        <script src="utils.js?v=refresh1"></script>
-        <script src="schedule.js?v=refresh1"></script>
-        <script src="settings.js?v=refresh1"></script>
-        <script src="draw.js?v=refresh2"></script>
-        <script src="cards.js?v=refresh1"></script>
-        <script src="other.js?v=refresh1"></script>
+        <script src="utils.js?v=refresh3"></script>
+        <script src="schedule.js?v=refresh3"></script>
+        <script src="settings.js?v=refresh3"></script>
+        <script src="draw.js?v=refresh3"></script>
+        <script src="cards.js?v=refresh3"></script>
+        <script src="other.js?v=refresh3"></script>
+        <script src="clock.js?v=refresh3"></script>
         <script
             type="module"
             src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"

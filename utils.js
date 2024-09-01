@@ -187,3 +187,13 @@ function isMobile() {
     })(navigator.userAgent || navigator.vendor || window.opera);
     return check;
 }
+
+function formatBlockName(block) {
+    if (block.block === 'WIN') {
+        return `${block.block}${block.number}`;
+    } else if (block.block === 'Advisory' || block.block === 'Lion') {
+        return `${block.block}`;
+    } else {
+        return `${block.block} Block`;
+    }
+}
