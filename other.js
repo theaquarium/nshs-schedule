@@ -13,11 +13,13 @@ document.querySelector('.affirmation').value = UserSettings.affirmation;
 document.querySelector('.schedule-title').addEventListener('input', () => {
     UserSettings.title = document.querySelector('.schedule-title').value;
     draw();
+    saveData();
 });
 
 document.querySelector('.use24h').addEventListener('change', () => {
     UserSettings.use24h = document.querySelector('.use24h').checked;
     draw();
+    saveData();
 });
 
 document.querySelector('.north').addEventListener('change', () => {
@@ -26,26 +28,31 @@ document.querySelector('.north').addEventListener('change', () => {
     document.querySelector('.schedule-title').value = UserSettings.title;
     lionTigerBlockTitle.innerHTML = UserSettings.north ? 'Tiger' : 'Lion';
     draw();
+    saveData();
 });
 
 document.querySelector('.useColors').addEventListener('change', () => {
     UserSettings.useColors = !document.querySelector('.useColors').checked;
     draw();
+    saveData();
 });
 
 document.querySelector('.showTimes').addEventListener('change', () => {
     UserSettings.showTimes = document.querySelector('.showTimes').checked;
     draw();
+    saveData();
 });
 
 document.querySelector('.showNumbers').addEventListener('change', () => {
     UserSettings.showNumbers = document.querySelector('.showNumbers').checked;
     draw();
+    saveData();
 });
 
 document.querySelector('.affirmation').addEventListener('input', () => {
     UserSettings.affirmation = document.querySelector('.affirmation').value;
     draw();
+    saveData();
 });
 
 // Buttons
@@ -58,6 +65,13 @@ document.querySelector('.print-button').addEventListener('click', () => {
 
 document.querySelector('.mobile-save-button').addEventListener('click', () => {
     shareCanvas('schedule.png');
+});
+
+document.querySelector('#clear-data').addEventListener('click', () => {
+    if (confirm('Are you sure you want to clear your data?')) {
+        resetData();
+        location.reload();
+    }
 });
 
 const affirmations = [
@@ -87,7 +101,6 @@ const affirmations = [
     'Take care of yourself.',
     'Take care of yourself today.',
     'You deserve the best.',
-    'You deserve the best.',
 ];
 
 document.querySelector('.new-affirmation').addEventListener('click', () => {
@@ -95,4 +108,5 @@ document.querySelector('.new-affirmation').addEventListener('click', () => {
         affirmations[Math.floor(Math.random() * affirmations.length)];
     document.querySelector('.affirmation').value = UserSettings.affirmation;
     draw();
+    saveData();
 });

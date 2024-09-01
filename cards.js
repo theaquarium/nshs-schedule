@@ -115,7 +115,9 @@ periodTypes.forEach((periodName) => {
         BlockSettings[`${periodName}1`] = settingsCache[0];
         BlockSettings[`${periodName}2`] = settingsCache[1];
         BlockSettings[`${periodName}3`] = settingsCache[2];
+
         draw();
+        saveData();
         writeback();
     };
 
@@ -261,6 +263,7 @@ periodTypes.forEach((periodName) => {
         BlockSettings[periodName] = settingsCache;
 
         draw();
+        saveData();
         writeback();
     };
 
@@ -296,3 +299,9 @@ periodTypes.forEach((periodName) => {
     write();
     writeback();
 });
+
+document
+    .querySelector('.options-card .card-header')
+    .addEventListener('click', () => {
+        document.querySelector('.options-card').classList.toggle('is-closed');
+    });
