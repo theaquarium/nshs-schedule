@@ -6,6 +6,8 @@ document.querySelector('.use24h').checked = UserSettings.use24h;
 document.querySelector('.north').checked = UserSettings.north;
 lionTigerBlockTitle.innerHTML = UserSettings.north ? 'Tiger' : 'Lion';
 document.querySelector('.useColors').checked = !UserSettings.useColors;
+document.querySelector('.showTimes').checked = UserSettings.showTimes;
+document.querySelector('.showNumbers').checked = UserSettings.showNumbers;
 document.querySelector('.affirmation').value = UserSettings.affirmation;
 
 document.querySelector('.schedule-title').addEventListener('input', () => {
@@ -28,6 +30,16 @@ document.querySelector('.north').addEventListener('change', () => {
 
 document.querySelector('.useColors').addEventListener('change', () => {
     UserSettings.useColors = !document.querySelector('.useColors').checked;
+    draw();
+});
+
+document.querySelector('.showTimes').addEventListener('change', () => {
+    UserSettings.showTimes = document.querySelector('.showTimes').checked;
+    draw();
+});
+
+document.querySelector('.showNumbers').addEventListener('change', () => {
+    UserSettings.showNumbers = document.querySelector('.showNumbers').checked;
     draw();
 });
 

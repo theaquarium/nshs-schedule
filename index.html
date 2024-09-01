@@ -101,9 +101,9 @@
                 <div class="content">
                     <h3>Hello!</h3>
                     <p>
-                        I made this tool a few years ago to make a pretty
+                        I created this tool a few years ago to make a pretty
                         version of my schedule! I graduated from South in 2024,
-                        but I hope this site lives on.
+                        but I hope this site can live on.
                         <br />
                         If you like it, please share
                         <a href="https://nshs.site/"
@@ -169,22 +169,57 @@
                         </label>
                     </div>
 
-                    <br />
+                    <div class="card block WIN class-card is-closed">
+                        <header class="card-header">
+                            <p class="card-header-title">Options</p>
+                            <button
+                                class="card-header-icon"
+                                aria-label="more options"
+                            >
+                                <span class="open-icon icon">
+                                    <ion-icon name="caret-down"></ion-icon>
+                                </span>
+                                <span class="closed-icon icon">
+                                    <ion-icon name="caret-back"></ion-icon>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card-content">
+                            <div class="field">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="use24h" />
+                                    Use 24 hour time
+                                </label>
+                            </div>
 
-                    <div class="field">
-                        <label class="checkbox">
-                            <input type="checkbox" class="use24h" />
-                            Use 24 hour time
-                        </label>
-                    </div>
+                            <div class="field">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="useColors" />
+                                    No colors (black & white)
+                                </label>
+                            </div>
 
-                    <div class="field">
-                        <label class="checkbox">
-                            <input type="checkbox" class="useColors" />
-                            No colors (black & white)
-                        </label>
+                            <div class="field">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="showTimes" />
+                                    Show block durations
+                                </label>
+                            </div>
+
+                            <div class="field">
+                                <label class="checkbox">
+                                    <input
+                                        type="checkbox"
+                                        class="showNumbers"
+                                    />
+                                    Show block numbers (ex. A1, A2, A3)
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <br />
 
                 <div class="class-cards">
                     <div class="card block dummy class-card is-closed">

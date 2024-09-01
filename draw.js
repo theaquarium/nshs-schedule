@@ -167,11 +167,13 @@ function drawRaw() {
                 // Block Length
                 ctx.font = '40px Helvetica';
 
-                ctx.fillText(
-                    `(${block.length})`,
-                    edgeBorder + columnWidth * dayNum + bNameWidth + 30,
-                    startPixel + 20 + 3 + 4,
-                );
+                if (UserSettings.showTimes) {
+                    ctx.fillText(
+                        `(${block.length})`,
+                        edgeBorder + columnWidth * dayNum + bNameWidth + 30,
+                        startPixel + 20 + 3 + 4,
+                    );
+                }
 
                 // Block time
                 ctx.fillStyle = 'black';
@@ -212,7 +214,11 @@ function drawRaw() {
                         block.block === 'Lion' && UserSettings.north
                             ? 'Tiger'
                             : block.block
-                    }${block.block === 'Lion' ? '' : block.number}`,
+                    }${
+                        block.block === 'Lion' || !UserSettings.showNumbers
+                            ? ''
+                            : block.number
+                    }`,
                     edgeBorder + columnWidth * dayNum + 20,
                     startPixel + 20 + 10,
                 );
@@ -223,17 +229,23 @@ function drawRaw() {
                         block.block === 'Lion' && UserSettings.north
                             ? 'Tiger'
                             : block.block
-                    }${block.block === 'Lion' ? '' : block.number}`,
+                    }${
+                        block.block === 'Lion' || !UserSettings.showNumbers
+                            ? ''
+                            : block.number
+                    }`,
                 ).width;
 
                 // Block length
                 ctx.font = '60px Helvetica';
 
-                ctx.fillText(
-                    `(${block.length})`,
-                    edgeBorder + columnWidth * dayNum + bNameWidth + 30,
-                    startPixel + 20 + 5 + 6,
-                );
+                if (UserSettings.showTimes) {
+                    ctx.fillText(
+                        `(${block.length})`,
+                        edgeBorder + columnWidth * dayNum + bNameWidth + 30,
+                        startPixel + 20 + 5 + 6,
+                    );
+                }
 
                 // Block times
                 ctx.fillStyle = 'black';

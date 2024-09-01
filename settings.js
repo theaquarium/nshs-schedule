@@ -2,6 +2,8 @@ const UserSettings = {
     title: 'NSHS Schedule',
     use24h: false,
     useColors: true,
+    showTimes: true,
+    showNumbers: true,
     north: false,
     affirmation: 'Semester 1',
 };
