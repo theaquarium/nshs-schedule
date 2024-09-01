@@ -10,8 +10,8 @@ const weekday = [
 ];
 
 function updateClock() {
-    // const now = new Date(2024, 8, 2, 3, 45, 0);
-    const now = new Date();
+    const now = new Date(2024, 8, 2, 12, 45, 0);
+    // const now = new Date();
 
     if (now.getDay() === 0 || now.getDay() === 6) {
         clock.style.display = 'none';

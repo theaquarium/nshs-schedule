@@ -146,3 +146,19 @@ footer.footer {
 .color-picker.is-shown {
     display: block;
 }
+
+#clock {
+    text-align: right;
+}
+
+@media screen and (max-width: 769px) {
+    #clock {
+        width: 100%;
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    .clock-level {
+        width: 100%;
+    }
+}
