@@ -36,14 +36,14 @@ const CanvasSizes = {
         pasteHeight: 3100,
     },
     oversized: {
-        width: 3528,
-        height: 8232,
+        width: 3528 / 2.5,
+        height: 8232 / 2.5,
 
-        leftMargin: 589,
-        topMargin: 2566,
+        leftMargin: 589 / 2.5,
+        topMargin: 2566 / 2.5,
 
-        pasteWidth: 2350,
-        pasteHeight: 3100,
+        pasteWidth: 2350 / 2.5,
+        pasteHeight: 3100 / 2.5,
     },
 };
 
