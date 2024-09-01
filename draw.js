@@ -129,8 +129,6 @@ function drawRaw() {
     );
 
     const columnWidth = (canvasWidth - 2 * edgeBorder) / 5;
-    const remainingHeight =
-        canvasHeight - 2 * edgeBorder - titleHeight - weekdayHeight;
 
     // Start and end lines
     ctx.beginPath();
