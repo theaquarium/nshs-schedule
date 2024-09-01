@@ -27,7 +27,11 @@ footer.footer {
     margin: 0 5%;
 }
 
-#canvas {
+#canvas-raw {
+    display: none;
+}
+
+#canvas-paste {
     display: none;
 }
 
@@ -37,10 +41,18 @@ footer.footer {
     object-fit: contain;
 }
 
+.sched-divider {
+    margin-top: 0;
+}
+
 @media screen and (min-width: 769px), print {
     .canvas-column {
         position: sticky;
         top: 1rem;
+    }
+
+    .sched-divider {
+        display: none;
     }
 }
 
@@ -88,29 +100,11 @@ footer.footer {
 }
 
 .desktop-share-buttons {
-    display: none;
-}
-
-.mobile-share-buttons {
     display: block;
 }
 
-.sched-divider {
-    margin-top: 0;
-}
-
-@media screen and (min-width: 769px) {
-    .desktop-share-buttons {
-        display: block;
-    }
-
-    .mobile-share-buttons {
-        display: none;
-    }
-
-    .sched-divider {
-        display: none;
-    }
+.mobile-share-buttons {
+    display: none;
 }
 
 @media screen and (max-width: 769px) {

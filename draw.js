@@ -1,18 +1,84 @@
-const canvas = document.getElementById('canvas');
+const canvas = document.getElementById('canvas-raw');
+const canvasPaste = document.getElementById('canvas-paste');
 const canvasClone = document.getElementById('canvas-clone');
 const ctx = canvas.getContext('2d');
+const pasteCtx = canvasPaste.getContext('2d');
 
-function copyCanvas() {
+const CanvasSizes = {
+    letter: {
+        width: 2550,
+        height: 3300,
+
+        leftMargin: 100,
+        topMargin: 100,
+
+        pasteWidth: 2350,
+        pasteHeight: 3100,
+    },
+    iphone: {
+        width: 1290,
+        height: 2796,
+
+        leftMargin: 92.5,
+        topMargin: 838,
+
+        pasteWidth: 1105,
+        pasteHeight: 1430,
+    },
+    square: {
+        width: 3300,
+        height: 3300,
+
+        leftMargin: 475,
+        topMargin: 100,
+
+        pasteWidth: 2350,
+        pasteHeight: 3100,
+    },
+    oversized: {
+        width: 3528,
+        height: 8232,
+
+        leftMargin: 589,
+        topMargin: 2566,
+
+        pasteWidth: 2350,
+        pasteHeight: 3100,
+    },
+};
+
+let SelectedSize = isMobile() ? 'iphone' : 'letter';
+
+function copyCanvasToImg() {
     const base64 = canvasToBase64();
     canvasClone.src = base64;
+}
+
+function copyCanvasWithFormat() {
+    const format = CanvasSizes[SelectedSize];
+    canvasPaste.width = format.width;
+    canvasPaste.height = format.height;
+
+    pasteCtx.fillStyle = 'white';
+    pasteCtx.fillRect(0, 0, format.width, format.height);
+
+    pasteCtx.drawImage(
+        canvas,
+        format.leftMargin - 100,
+        format.topMargin - 100,
+        format.pasteWidth + 200,
+        format.pasteHeight + 200,
+    );
 }
 
 function drawRaw() {
     const ppi = 300;
 
-    const edgeBorder = (1 / 3) * ppi;
+    // this edgeborder stuff is legacy stuff before the canvas format system was introduced
+    const edgeBorder = 100;
     const canvasWidth = 8.5 * ppi;
     const canvasHeight = 11 * ppi;
+
     const titleHeight = (1 / 2) * ppi;
     const weekdayHeight = (1 / 3) * ppi;
     const lunchBlocksWidth = (1 / 2) * ppi;
@@ -486,7 +552,8 @@ function drawRaw() {
         canvasHeight - 170 + footnoteOffsetY,
     );
 
-    copyCanvas();
+    copyCanvasWithFormat();
+    copyCanvasToImg();
 }
 
 // Initial draw! + debounce

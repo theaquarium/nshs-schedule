@@ -577,8 +577,37 @@
                         </div>
                     </div>
 
+                    <div class="content">
+                        <div class="field is-fullwidth">
+                            <label class="label">Format</label>
+                            <p class="control is-fullwidth has-icons-left">
+                                <span class="select is-fullwidth">
+                                    <select id="size-format">
+                                        <option value="letter">
+                                            Letter Size Paper (8.5" x 11")
+                                        </option>
+                                        <option value="iphone">
+                                            iPhone Lock Screen
+                                        </option>
+                                        <option value="square">Square</option>
+                                        <option value="oversized">
+                                            Oversized Borders (use for custom
+                                            lock screen placement)
+                                        </option>
+                                    </select>
+                                </span>
+                                <span
+                                    class="icon is-small is-left has-text-black"
+                                >
+                                    <ion-icon name="resize"></ion-icon>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
                     <img id="canvas-clone" alt-text="Your Schedule" />
-                    <canvas id="canvas" width="2550" height="3300"></canvas>
+                    <canvas id="canvas-raw" width="2550" height="3300"></canvas>
+                    <canvas id="canvas-paste"></canvas>
                 </div>
             </div>
         </div>

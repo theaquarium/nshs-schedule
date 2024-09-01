@@ -9,6 +9,7 @@ document.querySelector('.useColors').checked = !UserSettings.useColors;
 document.querySelector('.showTimes').checked = UserSettings.showTimes;
 document.querySelector('.showNumbers').checked = UserSettings.showNumbers;
 document.querySelector('.affirmation').value = UserSettings.affirmation;
+document.querySelector('#size-format').value = SelectedSize;
 
 document.querySelector('.schedule-title').addEventListener('input', () => {
     UserSettings.title = document.querySelector('.schedule-title').value;
@@ -53,6 +54,11 @@ document.querySelector('.affirmation').addEventListener('input', () => {
     UserSettings.affirmation = document.querySelector('.affirmation').value;
     draw();
     saveData();
+});
+
+document.querySelector('#size-format').addEventListener('input', () => {
+    SelectedSize = document.querySelector('#size-format').value;
+    draw();
 });
 
 // Buttons
@@ -110,3 +116,8 @@ document.querySelector('.new-affirmation').addEventListener('click', () => {
     draw();
     saveData();
 });
+
+if (isMobile()) {
+    document.querySelector('.mobile-share-buttons').style.display = 'block';
+    document.querySelector('.desktop-share-buttons').style.display = 'none';
+}

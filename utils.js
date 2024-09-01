@@ -134,7 +134,7 @@ function drawDiagRect(ctx, x, y, width, height, diagDistance) {
 }
 
 function canvasToBase64() {
-    const canvas = document.querySelector('#canvas');
+    const canvas = document.querySelector('#canvas-paste');
     return canvas.toDataURL('image/png');
 }
 
