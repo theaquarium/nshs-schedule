@@ -8,6 +8,7 @@ lionTigerBlockTitle.innerHTML = UserSettings.north ? 'Tiger' : 'Lion';
 document.querySelector('.useColors').checked = !UserSettings.useColors;
 document.querySelector('.showTimes').checked = UserSettings.showTimes;
 document.querySelector('.showNumbers').checked = UserSettings.showNumbers;
+document.querySelector('.invert').checked = UserSettings.invert;
 document.querySelector('.affirmation').value = UserSettings.affirmation;
 document.querySelector('#size-format').value = SelectedSize;
 
@@ -46,6 +47,12 @@ document.querySelector('.showTimes').addEventListener('change', () => {
 
 document.querySelector('.showNumbers').addEventListener('change', () => {
     UserSettings.showNumbers = document.querySelector('.showNumbers').checked;
+    draw();
+    saveData();
+});
+
+document.querySelector('.invert').addEventListener('change', () => {
+    UserSettings.invert = document.querySelector('.invert').checked;
     draw();
     saveData();
 });

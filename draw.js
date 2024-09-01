@@ -59,7 +59,7 @@ function copyCanvasWithFormat() {
     canvasPaste.width = format.width;
     canvasPaste.height = format.height;
 
-    pasteCtx.fillStyle = 'white';
+    pasteCtx.fillStyle = UserSettings.invert ? 'black' : 'white';
     pasteCtx.fillRect(0, 0, format.width, format.height);
 
     pasteCtx.drawImage(
@@ -72,6 +72,9 @@ function copyCanvasWithFormat() {
 }
 
 function drawRaw() {
+    const fg = UserSettings.invert ? 'white' : 'black';
+    const bg = UserSettings.invert ? 'black' : 'white';
+
     const ppi = 300;
 
     // this edgeborder stuff is legacy stuff before the canvas format system was introduced
@@ -99,8 +102,10 @@ function drawRaw() {
 
     ctx.lineWidth = 10;
 
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+    ctx.strokeStyle = fg;
 
     ctx.strokeRect(
         edgeBorder,
@@ -109,7 +114,7 @@ function drawRaw() {
         titleHeight,
     );
 
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = fg;
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'center';
     ctx.font = 'bold 80px Helvetica';
@@ -167,7 +172,7 @@ function drawRaw() {
             weekdayHeight,
         );
 
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = fg;
         ctx.textBaseline = 'middle';
         ctx.textAlign = 'center';
         ctx.font = 'bold 60px Helvetica';
@@ -197,7 +202,11 @@ function drawRaw() {
             const endPixel = minuteToHeight(timeStringToMinute(block.endTime));
 
             if (UserSettings.useColors) {
-                ctx.fillStyle = Colors[thisBlockSettings.color];
+                if (thisBlockSettings.color > -1) {
+                    ctx.fillStyle = Colors[thisBlockSettings.color];
+                } else {
+                    ctx.fillStyle = thisBlockSettings.customColor;
+                }
                 ctx.fillRect(
                     edgeBorder + columnWidth * dayNum,
                     startPixel,
@@ -216,7 +225,7 @@ function drawRaw() {
             // Advisory
             if (block.block === 'Advisory') {
                 // Block name
-                ctx.fillStyle = 'black';
+                ctx.fillStyle = fg;
                 ctx.textBaseline = 'top';
                 ctx.textAlign = 'left';
                 ctx.font = 'bold 50px Helvetica';
@@ -240,7 +249,7 @@ function drawRaw() {
                 }
 
                 // Block time
-                ctx.fillStyle = 'black';
+                ctx.fillStyle = fg;
                 ctx.textBaseline = 'top';
                 ctx.textAlign = 'left';
                 ctx.font = '45px Helvetica';
@@ -255,7 +264,7 @@ function drawRaw() {
                 );
 
                 // Room Number
-                ctx.fillStyle = 'black';
+                ctx.fillStyle = fg;
                 ctx.textBaseline = 'top';
                 ctx.textAlign = 'right';
                 ctx.font = 'bold 45px Helvetica';
@@ -267,7 +276,7 @@ function drawRaw() {
                 );
             } else {
                 // Block Name
-                ctx.fillStyle = 'black';
+                ctx.fillStyle = fg;
                 ctx.textBaseline = 'top';
                 ctx.textAlign = 'left';
                 ctx.font = 'bold 100px Helvetica';
@@ -312,7 +321,7 @@ function drawRaw() {
                 }
 
                 // Block times
-                ctx.fillStyle = 'black';
+                ctx.fillStyle = fg;
                 ctx.textBaseline = 'top';
                 ctx.textAlign = 'left';
                 ctx.font = '50px Helvetica';
@@ -339,7 +348,7 @@ function drawRaw() {
                             : columnWidth - 40;
 
                     // Class type
-                    ctx.fillStyle = 'black';
+                    ctx.fillStyle = fg;
                     ctx.textBaseline = 'top';
                     ctx.textAlign = 'left';
                     ctx.font = 'bold 50px Helvetica';
@@ -391,7 +400,7 @@ function drawRaw() {
                     );
                 } else if (block.block !== 'Lion' && block.block !== 'WIN') {
                     // It's a free block!
-                    ctx.fillStyle = 'black';
+                    ctx.fillStyle = fg;
                     ctx.textBaseline = 'top';
                     ctx.textAlign = 'left';
                     ctx.font = 'bold 60px Helvetica';
@@ -449,7 +458,9 @@ function drawRaw() {
                             //     lunchEndPixel - lunchStartPixel,
                             // );
 
-                            ctx.strokeStyle = '#00000055';
+                            ctx.strokeStyle = UserSettings.invert
+                                ? '#ffffff55'
+                                : '#00000055';
                             drawDiagRect(
                                 ctx,
                                 edgeBorder +
@@ -460,7 +471,7 @@ function drawRaw() {
                                 lunchEndPixel - lunchStartPixel,
                                 60,
                             );
-                            ctx.strokeStyle = '#000000';
+                            ctx.strokeStyle = fg;
                         }
 
                         ctx.strokeRect(
@@ -472,7 +483,7 @@ function drawRaw() {
                             lunchEndPixel - lunchStartPixel,
                         );
 
-                        ctx.fillStyle = 'black';
+                        ctx.fillStyle = fg;
                         ctx.textBaseline = 'top';
                         ctx.textAlign = 'left';
                         ctx.font = 'bold 45px Helvetica';
@@ -516,7 +527,7 @@ function drawRaw() {
         }
     }
 
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = fg;
     ctx.textBaseline = 'top';
     ctx.textAlign = 'left';
     ctx.font = 'bold 45px Helvetica';
@@ -541,7 +552,7 @@ function drawRaw() {
         canvasHeight - 222 + footnoteOffsetY,
     );
 
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = fg;
     ctx.font = 'bold 45px Helvetica';
 
     ctx.fillText(

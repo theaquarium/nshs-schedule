@@ -1,16 +1,16 @@
 const periodTypes = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
-const colorMappings = {
-    A: 1,
-    B: 2,
-    C: 3,
-    D: 4,
-    E: 5,
-    F: 6,
-    G: 7,
-    WIN: 8,
-    Advisory: 9,
-    Lion: 10,
-};
+// const colorMappings = {
+//     A: 1,
+//     B: 2,
+//     C: 3,
+//     D: 4,
+//     E: 5,
+//     F: 6,
+//     G: 7,
+//     WIN: 8,
+//     Advisory: 9,
+//     Lion: 10,
+// };
 
 const dummyCard = document.querySelector('.dummy.class-card');
 const cardsContainer = document.querySelector('.class-cards');
@@ -32,32 +32,42 @@ periodTypes.forEach((periodName) => {
         card.querySelector('.block-tab-2'),
         card.querySelector('.block-tab-3'),
     ];
-    let settingsCache = [
-        {
-            hasClass: true,
-            lunch: 3,
-            class: '',
-            teacher: '',
-            room: '',
-            color: colorMappings[periodName],
-        },
-        {
-            hasClass: true,
-            lunch: 3,
-            class: '',
-            teacher: '',
-            room: '',
-            color: colorMappings[periodName],
-        },
-        {
-            hasClass: true,
-            lunch: 3,
-            class: '',
-            teacher: '',
-            room: '',
-            color: colorMappings[periodName],
-        },
-    ];
+    // let settingsCache = [
+    //     {
+    //         hasClass: true,
+    //         lunch: 3,
+    //         class: '',
+    //         teacher: '',
+    //         room: '',
+    //         color: colorMappings[periodName],
+    //         customColor: '#ff0000',
+    //     },
+    //     {
+    //         hasClass: true,
+    //         lunch: 3,
+    //         class: '',
+    //         teacher: '',
+    //         room: '',
+    //         color: colorMappings[periodName],
+    //         customColor: '#ff0000',
+    //     },
+    //     {
+    //         hasClass: true,
+    //         lunch: 3,
+    //         class: '',
+    //         teacher: '',
+    //         room: '',
+    //         color: colorMappings[periodName],
+    //         customColor: '#ff0000',
+    //     },
+    // ];
+
+    let settingsCache = [];
+    for (let i = 0; i < 3; i += 1) {
+        settingsCache.push(
+            JSON.parse(JSON.stringify(BlockSettings[`${periodName}${i + 1}`])),
+        );
+    }
 
     let differentBlocks = false;
     let blockPage = 0;
@@ -144,6 +154,20 @@ periodTypes.forEach((periodName) => {
 
             blockPages[i].querySelector('.color').value =
                 settingsCache[i].color;
+
+            blockPages[i].querySelector('.coloris').value =
+                settingsCache[i].customColor;
+
+            if (settingsCache[i].color === -1) {
+                blockPages[i]
+                    .querySelector('.color-picker')
+                    .classList.add('is-shown');
+            } else {
+                blockPages[i]
+                    .querySelector('.color-picker')
+                    .classList.remove('is-shown');
+            }
+
             writebackListenerLock = false;
         }
     };
@@ -233,8 +257,18 @@ periodTypes.forEach((periodName) => {
             settingsCache[i].color = parseInt(
                 blockPages[i].querySelector('.color').value,
             );
+
             write();
         });
+
+        blockPages[i]
+            .querySelector('.coloris')
+            .addEventListener('input', () => {
+                if (writebackListenerLock) return;
+                settingsCache[i].customColor =
+                    blockPages[i].querySelector('.coloris').value;
+                write();
+            });
     }
 
     updateBlockTabs();
@@ -245,14 +279,15 @@ periodTypes.forEach((periodName) => {
 ['Advisory', 'WIN', 'Lion'].forEach((periodName) => {
     const card = document.querySelector(`.${periodName}`);
 
-    let settingsCache = {
-        hasClass: true,
-        lunch: -1,
-        class: '',
-        teacher: '',
-        room: '',
-        color: colorMappings[periodName],
-    };
+    // let settingsCache = {
+    //     hasClass: true,
+    //     lunch: -1,
+    //     class: '',
+    //     teacher: '',
+    //     room: '',
+    //     color: colorMappings[periodName],
+    // };
+    let settingsCache = JSON.parse(JSON.stringify(BlockSettings[periodName]));
 
     // Open/close
     card.querySelector('.card-header').addEventListener('click', () => {
@@ -278,6 +313,14 @@ periodTypes.forEach((periodName) => {
 
         card.querySelector('.color').value = settingsCache.color;
 
+        card.querySelector('.coloris').value = settingsCache.customColor;
+
+        if (settingsCache.color === -1) {
+            card.querySelector('.color-picker').classList.add('is-shown');
+        } else {
+            card.querySelector('.color-picker').classList.remove('is-shown');
+        }
+
         writebackListenerLock = false;
     };
 
@@ -293,6 +336,13 @@ periodTypes.forEach((periodName) => {
     card.querySelector('.color').addEventListener('input', () => {
         if (writebackListenerLock) return;
         settingsCache.color = parseInt(card.querySelector('.color').value);
+
+        write();
+    });
+
+    card.querySelector('.coloris').addEventListener('input', () => {
+        if (writebackListenerLock) return;
+        settingsCache.customColor = card.querySelector('.coloris').value;
         write();
     });
 
@@ -305,3 +355,10 @@ document
     .addEventListener('click', () => {
         document.querySelector('.options-card').classList.toggle('is-closed');
     });
+
+Coloris({
+    el: '.coloris',
+    theme: 'polaroid',
+    alpha: false,
+    defaultColor: '#ff00ff',
+});

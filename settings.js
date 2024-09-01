@@ -7,13 +7,14 @@ const UserSettings = {
     useColors: true,
     showTimes: true,
     showNumbers: true,
+    invert: false,
     north: false,
     affirmation: 'Semester 1',
 };
 
 const BlockSettings = {
     // DO NOT FORGET TO INCREMENT FOR BREAKING CHANGES
-    version: 1,
+    version: 2,
 
     A1: {
         hasClass: true,
@@ -21,7 +22,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 1,
+        customColor: '#ff0000',
     },
     A2: {
         hasClass: true,
@@ -29,7 +31,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 1,
+        customColor: '#ff0000',
     },
     A3: {
         hasClass: true,
@@ -37,7 +40,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 1,
+        customColor: '#ff0000',
     },
     B1: {
         hasClass: true,
@@ -45,7 +49,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 2,
+        customColor: '#ff0000',
     },
     B2: {
         hasClass: true,
@@ -53,7 +58,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 2,
+        customColor: '#ff0000',
     },
     B3: {
         hasClass: true,
@@ -61,7 +67,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 2,
+        customColor: '#ff0000',
     },
     C1: {
         hasClass: true,
@@ -69,7 +76,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 3,
+        customColor: '#ff0000',
     },
     C2: {
         hasClass: true,
@@ -77,7 +85,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 3,
+        customColor: '#ff0000',
     },
     C3: {
         hasClass: true,
@@ -85,7 +94,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 3,
+        customColor: '#ff0000',
     },
     D1: {
         hasClass: true,
@@ -93,7 +103,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 4,
+        customColor: '#ff0000',
     },
     D2: {
         hasClass: true,
@@ -101,7 +112,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 4,
+        customColor: '#ff0000',
     },
     D3: {
         hasClass: true,
@@ -109,7 +121,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 4,
+        customColor: '#ff0000',
     },
     E1: {
         hasClass: true,
@@ -117,7 +130,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 5,
+        customColor: '#ff0000',
     },
     E2: {
         hasClass: true,
@@ -125,7 +139,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 5,
+        customColor: '#ff0000',
     },
     E3: {
         hasClass: true,
@@ -133,7 +148,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 6,
+        customColor: '#ff0000',
     },
     F1: {
         hasClass: true,
@@ -141,7 +157,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 6,
+        customColor: '#ff0000',
     },
     F2: {
         hasClass: true,
@@ -149,7 +166,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 6,
+        customColor: '#ff0000',
     },
     F3: {
         hasClass: true,
@@ -158,6 +176,7 @@ const BlockSettings = {
         teacher: '',
         lunch: 3,
         color: 0,
+        customColor: '#ff0000',
     },
     G1: {
         hasClass: true,
@@ -165,7 +184,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 7,
+        customColor: '#ff0000',
     },
     G2: {
         hasClass: true,
@@ -173,7 +193,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 7,
+        customColor: '#ff0000',
     },
     G3: {
         hasClass: true,
@@ -181,7 +202,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 7,
+        customColor: '#ff0000',
     },
     Advisory: {
         hasClass: true,
@@ -189,7 +211,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 9,
+        customColor: '#ff0000',
     },
     Lion: {
         hasClass: true,
@@ -197,7 +220,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 10,
+        customColor: '#ff0000',
     },
     WIN: {
         hasClass: true,
@@ -205,7 +229,8 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 8,
+        customColor: '#ff0000',
     },
 };
 
