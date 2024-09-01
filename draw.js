@@ -185,7 +185,7 @@ function drawRaw() {
                         UserSettings.use24h,
                     )}-${convertTime(block.endTime, UserSettings.use24h)}`,
                     edgeBorder + columnWidth * dayNum + 20,
-                    startPixel + 20 + 5 + 55,
+                    startPixel + 20 + 5 + 52,
                 );
 
                 // Room Number

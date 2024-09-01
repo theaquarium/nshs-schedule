@@ -86,3 +86,39 @@ footer.footer {
     height: 1px;
     margin: 1.5rem 5%;
 }
+
+.desktop-share-buttons {
+    display: none;
+}
+
+.mobile-share-buttons {
+    display: block;
+}
+
+.sched-divider {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 769px) {
+    .desktop-share-buttons {
+        display: block;
+    }
+
+    .mobile-share-buttons {
+        display: none;
+    }
+
+    .sched-divider {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    #your-schedule-title {
+        margin-bottom: 0;
+    }
+}
+
+.mobile-save-button {
+    margin-bottom: var(--bulma-content-block-margin-bottom);
+}

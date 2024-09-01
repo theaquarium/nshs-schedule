@@ -43,7 +43,8 @@ document.querySelector('.save-button').addEventListener('click', () => {
 document.querySelector('.print-button').addEventListener('click', () => {
     printBase64(canvasToBase64());
 });
-document.querySelector('.share-button').addEventListener('click', () => {
+
+document.querySelector('.mobile-save-button').addEventListener('click', () => {
     shareCanvas('schedule.png');
 });
 

@@ -75,6 +75,8 @@ periodTypes.forEach((periodName) => {
     // Change names
     card.querySelector('.card-header-title').innerHTML = periodName;
 
+    card.querySelector('.differentBlocks-name').innerHTML = periodName;
+
     // Open/close
     card.querySelector('.card-header').addEventListener('click', () => {
         card.classList.toggle('is-closed');

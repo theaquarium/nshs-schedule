@@ -71,8 +71,6 @@
         />
         <meta name="theme-color" content="#4259ff" />
 
-        <link rel="stylesheet" href="index.css" />
-
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -84,6 +82,8 @@
             rel="stylesheet"
             crossorigin="anonymous"
         />
+
+        <link rel="stylesheet" href="index.css" />
     </head>
     <body>
         <section class="hero is-link is-bold block">
@@ -106,7 +106,12 @@
                         but I hope this site lives on.
                         <br />
                         If you like it, please share
-                        <strong>nshs.site</strong> with your friends!
+                        <a href="https://nshs.site/"
+                            ><strong style="color: #4259ff"
+                                >nshs.site</strong
+                            ></a
+                        >
+                        with your friends!
                     </p>
                     <p>
                         Have a great day!<em>
@@ -204,7 +209,9 @@
                                     class="differentBlocks"
                                     checked
                                 />
-                                All three of my blocks are the same
+                                All three of my
+                                <span class="differentBlocks-name">X</span>
+                                blocks are the same
                             </label>
                             <div class="divider"></div>
                             <div class="tabs is-boxed block-tabs">
@@ -481,15 +488,16 @@
             </div>
             <div class="column">
                 <div class="canvas-column">
+                    <div class="divider sched-divider"></div>
                     <div class="level content" style="margin-bottom: 0">
                         <div class="level-left">
-                            <h1>Your Schedule</h1>
+                            <h1 id="your-schedule-title">Your Schedule</h1>
                         </div>
-                        <div class="level-right">
+                        <div class="level-right desktop-share-buttons">
                             <div class="field has-addons">
                                 <p class="control">
                                     <button
-                                        class="button is-small is-outlined is-link save-button"
+                                        class="button is-normal is-outlined is-link save-button"
                                     >
                                         <span class="icon">
                                             <ion-icon name="save"></ion-icon>
@@ -499,7 +507,7 @@
                                 </p>
                                 <p class="control">
                                     <button
-                                        class="button is-small is-outlined is-link print-button"
+                                        class="button is-normal is-outlined is-link print-button"
                                     >
                                         <span class="icon">
                                             <ion-icon name="print"></ion-icon>
@@ -507,16 +515,18 @@
                                         <span>Print</span>
                                     </button>
                                 </p>
+                            </div>
+                        </div>
+                        <div class="level-right mobile-share-buttons">
+                            <div class="field">
                                 <p class="control">
                                     <button
-                                        class="button is-small is-outlined is-link share-button"
+                                        class="button is-normal is-fullwidth is-outlined is-link mobile-save-button"
                                     >
                                         <span class="icon">
-                                            <ion-icon
-                                                name="share-social"
-                                            ></ion-icon>
+                                            <ion-icon name="save"></ion-icon>
                                         </span>
-                                        <span>Share</span>
+                                        <span>Save & Share</span>
                                     </button>
                                 </p>
                             </div>
@@ -525,12 +535,6 @@
 
                     <img id="canvas-clone" alt-text="Your Schedule" />
                     <canvas id="canvas" width="2550" height="3300"></canvas>
-
-                    <p class="is-size-7 is-italic">
-                        If you're using a phone, the save buttons might not
-                        work, so you can either take a screenshot or tap and
-                        hold on the schedule to save it.
-                    </p>
                 </div>
             </div>
         </div>
