@@ -148,7 +148,7 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 6,
+        color: 5,
         customColor: '#ff0000',
     },
     F1: {
@@ -175,7 +175,7 @@ const BlockSettings = {
         room: '',
         teacher: '',
         lunch: 3,
-        color: 0,
+        color: 6,
         customColor: '#ff0000',
     },
     G1: {
