@@ -197,3 +197,15 @@ function formatBlockName(block) {
         return `${block.block} Block`;
     }
 }
+
+function areBlockSettingsSame(block1, block2) {
+    return (
+        block1.hasClass === block2.hasClass &&
+        block1.class === block2.class &&
+        block1.room === block2.room &&
+        block1.teacher === block2.teacher &&
+        block1.lunch === block2.lunch &&
+        block1.color === block2.color &&
+        block1.customColor === block2.customColor
+    );
+}

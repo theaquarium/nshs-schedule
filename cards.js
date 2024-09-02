@@ -69,7 +69,10 @@ periodTypes.forEach((periodName) => {
         );
     }
 
-    let differentBlocks = false;
+    let differentBlocks = !(
+        areBlockSettingsSame(settingsCache[0], settingsCache[1]) &&
+        areBlockSettingsSame(settingsCache[1], settingsCache[2])
+    );
     let blockPage = 0;
 
     // Create new pages
@@ -139,6 +142,16 @@ periodTypes.forEach((periodName) => {
             blockPages[i].querySelector('.hasClass').checked =
                 settingsCache[i].hasClass;
 
+            if (settingsCache[i].hasClass) {
+                blockPages[i].querySelector(
+                    '.class-info-fields',
+                ).style.display = 'block';
+            } else {
+                blockPages[i].querySelector(
+                    '.class-info-fields',
+                ).style.display = 'none';
+            }
+
             blockPages[i].querySelector('.class').value =
                 settingsCache[i].class;
 
@@ -173,16 +186,6 @@ periodTypes.forEach((periodName) => {
     };
 
     for (let i = 0; i < blockTabs.length; i += 1) {
-        const hideClassInfo = () => {
-            blockPages[i].querySelector('.class-info-fields').style.display =
-                'none';
-        };
-
-        const showClassInfo = () => {
-            blockPages[i].querySelector('.class-info-fields').style.display =
-                'block';
-        };
-
         blockTabs[i].addEventListener('click', () => {
             blockPage = i;
             updateBlockTabs();
@@ -195,25 +198,11 @@ periodTypes.forEach((periodName) => {
                 settingsCache[i].hasClass =
                     blockPages[i].querySelector('.hasClass').checked;
                 if (settingsCache[i].hasClass) {
-                    settingsCache[i] = {
-                        hasClass: true,
-                        lunch: 3,
-                        class: '',
-                        teacher: '',
-                        room: '',
-                        color: colorMappings[periodName],
-                    };
-                    showClassInfo();
+                    settingsCache[i].hasClass = true;
                 } else {
-                    settingsCache[i] = {
-                        hasClass: false,
-                        lunch: 3,
-                        class: '',
-                        teacher: '',
-                        room: '',
-                        color: 0,
-                    };
-                    hideClassInfo();
+                    settingsCache[i].hasClass = false;
+                    settingsCache[i].lunch = 3;
+                    settingsCache[i].color = 0;
                 }
                 write();
             });
@@ -360,5 +349,5 @@ Coloris({
     el: '.coloris',
     theme: 'polaroid',
     alpha: false,
-    defaultColor: '#ff00ff',
+    defaultColor: '#ff0000',
 });
