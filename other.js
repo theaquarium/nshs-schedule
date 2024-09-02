@@ -20,6 +20,7 @@ document.querySelector('.schedule-title').addEventListener('input', () => {
 
 document.querySelector('.use24h').addEventListener('change', () => {
     UserSettings.use24h = document.querySelector('.use24h').checked;
+    updateClock();
     draw();
     saveData();
 });
