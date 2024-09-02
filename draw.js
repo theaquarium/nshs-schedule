@@ -203,7 +203,11 @@ function drawRaw() {
 
             if (UserSettings.useColors) {
                 if (thisBlockSettings.color > -1) {
-                    ctx.fillStyle = Colors[thisBlockSettings.color];
+                    if (UserSettings.invert) {
+                        ctx.fillStyle = InvertColors[thisBlockSettings.color];
+                    } else {
+                        ctx.fillStyle = Colors[thisBlockSettings.color];
+                    }
                 } else {
                     ctx.fillStyle = thisBlockSettings.customColor;
                 }
